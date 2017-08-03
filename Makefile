@@ -512,4 +512,7 @@ $(DISTRIBUTE_DIR): all
 	install -m 644 $(DYNAMIC_NAME) $(DISTRIBUTE_DIR)/lib
 	cd $(DISTRIBUTE_DIR)/lib; rm -f $(DYNAMIC_NAME_SHORT);   ln -s $(DYNAMIC_VERSIONED_NAME_SHORT) $(DYNAMIC_NAME_SHORT)
 
+echo:
+	echo $(INCLUDE_DIRS)
+
 -include $(DEPS)

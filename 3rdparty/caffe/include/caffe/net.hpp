@@ -227,6 +227,9 @@ class Net {
   static bool StateMeetsRule(const NetState& state, const NetStateRule& rule,
       const string& layer_name);
 
+  inline void set_iter(int iter) { iter_=iter; }
+  int iter() { return iter_; }
+  
   // Invoked at specific points during an iteration
   class Callback {
    protected:
@@ -335,6 +338,8 @@ class Net {
   vector<Callback*> after_forward_;
   vector<Callback*> before_backward_;
   vector<Callback*> after_backward_;
+
+  int iter_;
 
 DISABLE_COPY_AND_ASSIGN(Net);
 };

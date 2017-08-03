@@ -94,6 +94,7 @@ endif()
 
 # ---[ OpenCV
 if(USE_OPENCV)
+  set(OpenCV_DIR /usr/share/opencv3.2/share/OpenCV)
   find_package(OpenCV QUIET COMPONENTS core highgui imgproc imgcodecs)
   if(NOT OpenCV_FOUND) # if not OpenCV 3.x, then imgcodecs are not found
     find_package(OpenCV REQUIRED COMPONENTS core highgui imgproc)
